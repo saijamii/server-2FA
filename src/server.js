@@ -11,7 +11,7 @@ import "./config/passportConfig.js";
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3001", "https://twofa-system-38o5.onrender.com"],
+  origin: ["http://localhost:3001", "https://https://server-2fa.onrender.com"],
   credentials: true,
 };
 
@@ -29,6 +29,7 @@ app.use(
     cookie: {
       maxAge: 6000 * 60,
       secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       httpOnly: true,
     },
   })
@@ -36,6 +37,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
+app.set("trust proxy", 1);
 
 // Routes
 app.use("/api/auth", authRoutes);
