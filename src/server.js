@@ -15,6 +15,7 @@ const corsOptions = {
     "http://localhost:3001",
     "https://https://server-2fa.onrender.com",
     "https://2fa-pink.vercel.app/",
+    "https://2fa-git-main-saijamiis-projects.vercel.app",
   ],
   credentials: true,
 };
