@@ -11,7 +11,11 @@ import "./config/passportConfig.js";
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3001", "https://https://server-2fa.onrender.com"],
+  origin: [
+    "http://localhost:3001",
+    "https://https://server-2fa.onrender.com",
+    "https://2fa-pink.vercel.app/",
+  ],
   credentials: true,
 };
 
